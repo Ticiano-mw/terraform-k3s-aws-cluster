@@ -114,14 +114,16 @@ resource "aws_launch_template" "k3s_server" {
   }
 
   tags = {
-    Name = "${local.name}-server"
+    Name        = "${local.name}-server",
+    "Terraform" = "true"
   }
 
   tag_specifications {
     resource_type = "instance"
 
     tags = {
-      Name = "${local.name}-server"
+      Name        = "${local.name}-server",
+      "Terraform" = "true"
     }
   }
 }
@@ -148,7 +150,8 @@ resource "aws_launch_template" "k3s_agent" {
   }
 
   tags = {
-    Name = "${local.name}-agent"
+    Name        = "${local.name}-agent",
+    "Terraform" = "true"
   }
 
   tag_specifications {
@@ -230,7 +233,7 @@ resource "aws_rds_cluster" "k3s" {
   database_name                   = local.db_name
   master_username                 = local.db_user
   master_password                 = local.db_pass
-  preferred_maintenance_window    = "fri:11:21-fri:11:51"
+  preferred_maintenance_window    = "sat:00:21-sat:00:51"
   db_subnet_group_name            = aws_db_subnet_group.private.0.id
   vpc_security_group_ids          = [aws_security_group.database.id]
   storage_encrypted               = true

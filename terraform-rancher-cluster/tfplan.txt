@@ -1,0 +1,1726 @@
+[0m[1mRefreshing Terraform state in-memory prior to plan...[0m
+The refreshed state will be used to calculate this plan, but will not be
+persisted to local or remote state storage.
+[0m
+[0m[1mdata.aws_ami.ubuntu: Refreshing state...[0m
+[0m[1mmodule.k3s_rancher.data.aws_route53_zone.dns_zone: Refreshing state...[0m
+[0m[1mmodule.k3s_rancher.data.aws_ami.ubuntu: Refreshing state...[0m
+
+------------------------------------------------------------------------
+
+An execution plan has been generated and is shown below.
+Resource actions are indicated with the following symbols:
+  [32m+[0m create
+ [36m<=[0m read (data resources)
+[0m
+Terraform will perform the following actions:
+
+[1m  # aws_instance.bastion[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_instance" "bastion" {
+      [32m+[0m [0m[1m[0mami[0m[0m                          = "ami-0b345448d6011eb59"
+      [32m+[0m [0m[1m[0marn[0m[0m                          = (known after apply)
+      [32m+[0m [0m[1m[0massociate_public_ip_address[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mcpu_core_count[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mcpu_threads_per_core[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mget_password_data[0m[0m            = false
+      [32m+[0m [0m[1m[0mhost_id[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0minstance_state[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0minstance_type[0m[0m                = "t3.micro"
+      [32m+[0m [0m[1m[0mipv6_address_count[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_addresses[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mkey_name[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0moutpost_arn[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mpassword_data[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mplacement_group[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mprimary_network_interface_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_dns[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0msecurity_groups[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0msource_dest_check[0m[0m            = true
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                         = {
+          [32m+[0m [0m"Name" = "rancher-bastion"
+        }
+      [32m+[0m [0m[1m[0mtenancy[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0muser_data[0m[0m                    = "8f73b1ca8f5835a5174df6159a96645afacdac3b"
+      [32m+[0m [0m[1m[0mvolume_tags[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_security_group_ids[0m[0m       = (known after apply)
+
+      [32m+[0m [0mebs_block_device {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mencrypted[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0miops[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mkms_key_id[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0msnapshot_id[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_id[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_size[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_type[0m[0m           = (known after apply)
+        }
+
+      [32m+[0m [0mephemeral_block_device {
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0mno_device[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mvirtual_name[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mmetadata_options {
+          [32m+[0m [0m[1m[0mhttp_endpoint[0m[0m               = (known after apply)
+          [32m+[0m [0m[1m[0mhttp_put_response_hop_limit[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mhttp_tokens[0m[0m                 = (known after apply)
+        }
+
+      [32m+[0m [0mnetwork_interface {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_index[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m  = (known after apply)
+        }
+
+      [32m+[0m [0mroot_block_device {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mencrypted[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0miops[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mkms_key_id[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_id[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_size[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_type[0m[0m           = (known after apply)
+        }
+    }
+
+[1m  # aws_security_group.bastion[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group" "bastion" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "Managed by Terraform"
+      [32m+[0m [0m[1m[0megress[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mingress[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                   = "bastion-sg"
+      [32m+[0m [0m[1m[0mowner_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                 = (known after apply)
+    }
+
+[1m  # aws_security_group_rule.bastion_egress_all[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "bastion_egress_all" {
+      [32m+[0m [0m[1m[0mcidr_blocks[0m[0m              = [
+          [32m+[0m [0m"0.0.0.0/0",
+        ]
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 0
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "-1"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 0
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "egress"
+    }
+
+[1m  # aws_security_group_rule.bastion_ssh[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "bastion_ssh" {
+      [32m+[0m [0m[1m[0mcidr_blocks[0m[0m              = [
+          [32m+[0m [0m"0.0.0.0/0",
+        ]
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 22
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 22
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "ingress"
+    }
+
+[1m  # random_password.db_pass[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "random_password" "db_pass" {
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mlength[0m[0m      = 32
+      [32m+[0m [0m[1m[0mlower[0m[0m       = true
+      [32m+[0m [0m[1m[0mmin_lower[0m[0m   = 0
+      [32m+[0m [0m[1m[0mmin_numeric[0m[0m = 0
+      [32m+[0m [0m[1m[0mmin_special[0m[0m = 0
+      [32m+[0m [0m[1m[0mmin_upper[0m[0m   = 0
+      [32m+[0m [0m[1m[0mnumber[0m[0m      = true
+      [32m+[0m [0m[1m[0mresult[0m[0m      = (sensitive value)
+      [32m+[0m [0m[1m[0mspecial[0m[0m     = false
+      [32m+[0m [0m[1m[0mupper[0m[0m       = true
+    }
+
+[1m  # random_password.rancher_pass[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "random_password" "rancher_pass" {
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mlength[0m[0m      = 20
+      [32m+[0m [0m[1m[0mlower[0m[0m       = true
+      [32m+[0m [0m[1m[0mmin_lower[0m[0m   = 0
+      [32m+[0m [0m[1m[0mmin_numeric[0m[0m = 0
+      [32m+[0m [0m[1m[0mmin_special[0m[0m = 0
+      [32m+[0m [0m[1m[0mmin_upper[0m[0m   = 0
+      [32m+[0m [0m[1m[0mnumber[0m[0m      = true
+      [32m+[0m [0m[1m[0mresult[0m[0m      = (sensitive value)
+      [32m+[0m [0m[1m[0mspecial[0m[0m     = true
+      [32m+[0m [0m[1m[0mupper[0m[0m       = true
+    }
+
+[1m  # module.k3s_rancher.data.aws_subnet_ids.available[0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "aws_subnet_ids" "available"  {
+      [32m+[0m [0m[1m[0mid[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mids[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m = (known after apply)
+    }
+
+[1m  # module.k3s_rancher.data.aws_vpc.default[0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "aws_vpc" "default"  {
+      [32m+[0m [0m[1m[0marn[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block_associations[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mdefault[0m[0m                 = false
+      [32m+[0m [0m[1m[0mdhcp_options_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0menable_dns_hostnames[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0menable_dns_support[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0minstance_tenancy[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_association_id[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mmain_route_table_id[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mstate[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                    = (known after apply)
+    }
+
+[1m  # module.k3s_rancher.data.template_cloudinit_config.k3s_agent[0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "template_cloudinit_config" "k3s_agent"  {
+      [32m+[0m [0m[1m[0mbase64_encode[0m[0m = true
+      [32m+[0m [0m[1m[0mgzip[0m[0m          = true
+      [32m+[0m [0m[1m[0mid[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mrendered[0m[0m      = (known after apply)
+
+      [32m+[0m [0mpart {
+          [32m+[0m [0m[1m[0mcontent[0m[0m      = <<~EOT
+                #cloud-config
+                
+                ssh_authorized_keys:
+                
+                - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgfSbr6ebJ10Kmab0IHydNrMyK/d1ll4DgBx/JHRTthwjeX7dh7Ht7ZfA7FIWc8LPmpiT0+pG0Ek7/SWcbbm7X69Lc6en5AGQ+/xKYFPvjeQrPr8DUeYPPIcdQmFsGJrQasjEQ2CXyDlQtf4D14fUlCtVeVG58fKHfuaFx4xcz4Ec/8PE4sG6AJUgNP3X2D7BAuDBQN8Pm8OJDeBw+4E7QS7/sEajqJsXgFnGOOQ1N/rQGXiIMSHvbT66yTdhAW3FbFZQS0efI+g69PbbQZ3rqJyiK4Br6htyIHjs6xcmSa89IgVZSXV+rwW/SBYnw0LcOJCdurcNT8rZXsfjeQHBt ticiano@trancos-laptop
+                
+                
+                runcmd:
+                - apt-get update
+                - apt-get install -y software-properties-common
+                - DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+            EOT
+          [32m+[0m [0m[1m[0mcontent_type[0m[0m = "text/cloud-config"
+          [32m+[0m [0m[1m[0mfilename[0m[0m     = "init.cfg"
+        }
+      [32m+[0m [0mpart {
+          [32m+[0m [0m[1m[0mcontent[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mcontent_type[0m[0m = "text/x-shellscript"
+        }
+    }
+
+[1m  # module.k3s_rancher.data.template_cloudinit_config.k3s_server[0m will be read during apply
+  # (config refers to values not yet known)[0m[0m
+[0m [36m<=[0m[0m data "template_cloudinit_config" "k3s_server"  {
+      [32m+[0m [0m[1m[0mbase64_encode[0m[0m = true
+      [32m+[0m [0m[1m[0mgzip[0m[0m          = true
+      [32m+[0m [0m[1m[0mid[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mrendered[0m[0m      = (known after apply)
+
+      [32m+[0m [0mpart {
+          [32m+[0m [0m[1m[0mcontent[0m[0m      = <<~EOT
+                #cloud-config
+                
+                ssh_authorized_keys:
+                
+                - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDgfSbr6ebJ10Kmab0IHydNrMyK/d1ll4DgBx/JHRTthwjeX7dh7Ht7ZfA7FIWc8LPmpiT0+pG0Ek7/SWcbbm7X69Lc6en5AGQ+/xKYFPvjeQrPr8DUeYPPIcdQmFsGJrQasjEQ2CXyDlQtf4D14fUlCtVeVG58fKHfuaFx4xcz4Ec/8PE4sG6AJUgNP3X2D7BAuDBQN8Pm8OJDeBw+4E7QS7/sEajqJsXgFnGOOQ1N/rQGXiIMSHvbT66yTdhAW3FbFZQS0efI+g69PbbQZ3rqJyiK4Br6htyIHjs6xcmSa89IgVZSXV+rwW/SBYnw0LcOJCdurcNT8rZXsfjeQHBt ticiano@trancos-laptop
+                
+                
+                runcmd:
+                - apt-get update
+                - apt-get install -y software-properties-common
+                - DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+            EOT
+          [32m+[0m [0m[1m[0mcontent_type[0m[0m = "text/cloud-config"
+          [32m+[0m [0m[1m[0mfilename[0m[0m     = "init.cfg"
+        }
+      [32m+[0m [0mpart {
+          [32m+[0m [0m[1m[0mcontent[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mcontent_type[0m[0m = "text/x-shellscript"
+        }
+      [32m+[0m [0mpart {
+          [32m+[0m [0m[1m[0mcontent[0m[0m      = <<~EOT
+                #!/bin/bash
+                
+                cat <<'EOF' > /var/lib/rancher/k3s/server/manifests/ingress.yaml
+                ---
+                apiVersion: v1
+                kind: Namespace
+                metadata:
+                  name: ingress-nginx
+                ---
+                kind: ConfigMap
+                apiVersion: v1
+                metadata:
+                  name: nginx-configuration
+                  namespace: ingress-nginx
+                  labels:
+                    app: ingress-nginx
+                ---
+                kind: ConfigMap
+                apiVersion: v1
+                metadata:
+                  name: tcp-services
+                  namespace: ingress-nginx
+                ---
+                kind: ConfigMap
+                apiVersion: v1
+                metadata:
+                  name: udp-services
+                  namespace: ingress-nginx
+                ---
+                apiVersion: v1
+                kind: ServiceAccount
+                metadata:
+                  name: nginx-ingress-serviceaccount
+                  namespace: ingress-nginx
+                ---
+                apiVersion: rbac.authorization.k8s.io/v1beta1
+                kind: ClusterRole
+                metadata:
+                  name: nginx-ingress-clusterrole
+                rules:
+                  - apiGroups:
+                      - ""
+                    resources:
+                      - configmaps
+                      - endpoints
+                      - nodes
+                      - pods
+                      - secrets
+                    verbs:
+                      - list
+                      - watch
+                  - apiGroups:
+                      - ""
+                    resources:
+                      - nodes
+                    verbs:
+                      - get
+                  - apiGroups:
+                      - ""
+                    resources:
+                      - services
+                    verbs:
+                      - get
+                      - list
+                      - watch
+                  - apiGroups:
+                      - "extensions"
+                    resources:
+                      - ingresses
+                      - daemonsets
+                    verbs:
+                      - get
+                      - list
+                      - watch
+                  - apiGroups:
+                      - ""
+                    resources:
+                        - events
+                    verbs:
+                        - create
+                        - patch
+                  - apiGroups:
+                      - "extensions"
+                    resources:
+                      - ingresses/status
+                    verbs:
+                      - update
+                ---
+                apiVersion: rbac.authorization.k8s.io/v1beta1
+                kind: Role
+                metadata:
+                  name: nginx-ingress-role
+                  namespace: ingress-nginx
+                rules:
+                  - apiGroups:
+                      - ""
+                    resources:
+                      - configmaps
+                      - pods
+                      - secrets
+                      - namespaces
+                    verbs:
+                      - get
+                  - apiGroups:
+                      - ""
+                    resources:
+                      - configmaps
+                    resourceNames:
+                      # Defaults to "<election-id>-<ingress-class>"
+                      # Here: "<ingress-controller-leader>-<nginx>"
+                      # This has to be adapted if you change either parameter
+                      # when launching the nginx-ingress-controller.
+                      - "ingress-controller-leader-nginx"
+                    verbs:
+                      - get
+                      - update
+                  - apiGroups:
+                      - ""
+                    resources:
+                      - configmaps
+                    verbs:
+                      - create
+                  - apiGroups:
+                      - ""
+                    resources:
+                      - endpoints
+                    verbs:
+                      - get
+                ---
+                apiVersion: rbac.authorization.k8s.io/v1beta1
+                kind: RoleBinding
+                metadata:
+                  name: nginx-ingress-role-nisa-binding
+                  namespace: ingress-nginx
+                roleRef:
+                  apiGroup: rbac.authorization.k8s.io
+                  kind: Role
+                  name: nginx-ingress-role
+                subjects:
+                  - kind: ServiceAccount
+                    name: nginx-ingress-serviceaccount
+                    namespace: ingress-nginx
+                ---
+                apiVersion: rbac.authorization.k8s.io/v1beta1
+                kind: ClusterRoleBinding
+                metadata:
+                  name: nginx-ingress-clusterrole-nisa-binding
+                roleRef:
+                  apiGroup: rbac.authorization.k8s.io
+                  kind: ClusterRole
+                  name: nginx-ingress-clusterrole
+                subjects:
+                  - kind: ServiceAccount
+                    name: nginx-ingress-serviceaccount
+                    namespace: ingress-nginx
+                ---
+                apiVersion: apps/v1
+                kind: DaemonSet
+                metadata:
+                  name: nginx-ingress-controller
+                  namespace: ingress-nginx
+                spec:
+                  selector:
+                    matchLabels:
+                      app: ingress-nginx
+                  template:
+                    metadata:
+                      labels:
+                        app: ingress-nginx
+                      annotations:
+                        prometheus.io/port: '10254'
+                        prometheus.io/scrape: 'true'
+                    spec:
+                      affinity:
+                        nodeAffinity:
+                          requiredDuringSchedulingIgnoredDuringExecution:
+                            nodeSelectorTerms:
+                              - matchExpressions:
+                                - key: beta.kubernetes.io/os
+                                  operator: NotIn
+                                  values:
+                                    - windows
+                      hostNetwork: true
+                      serviceAccountName: nginx-ingress-serviceaccount
+                      tolerations:
+                      - effect: NoExecute
+                        operator: Exists
+                      - effect: NoSchedule
+                        operator: Exists
+                      containers:
+                        - name: nginx-ingress-controller
+                          image: rancher/nginx-ingress-controller:0.21.0-rancher3
+                          args:
+                            - /nginx-ingress-controller
+                            - --default-backend-service=$(POD_NAMESPACE)/default-http-backend
+                            - --configmap=$(POD_NAMESPACE)/nginx-configuration
+                            - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
+                            - --udp-services-configmap=$(POD_NAMESPACE)/udp-services
+                            - --annotations-prefix=nginx.ingress.kubernetes.io
+                          securityContext:
+                            capabilities:
+                                drop:
+                                - ALL
+                                add:
+                                - NET_BIND_SERVICE
+                            runAsUser: 33
+                          env:
+                            - name: POD_NAME
+                              valueFrom:
+                                fieldRef:
+                                  fieldPath: metadata.name
+                            - name: POD_NAMESPACE
+                              valueFrom:
+                                fieldRef:
+                                  fieldPath: metadata.namespace
+                          ports:
+                          - name: http
+                            containerPort: 80
+                          - name: https
+                            containerPort: 443
+                          livenessProbe:
+                            failureThreshold: 3
+                            httpGet:
+                              path: /healthz
+                              port: 10254
+                              scheme: HTTP
+                            initialDelaySeconds: 10
+                            periodSeconds: 10
+                            successThreshold: 1
+                            timeoutSeconds: 1
+                          readinessProbe:
+                            failureThreshold: 3
+                            httpGet:
+                              path: /healthz
+                              port: 10254
+                              scheme: HTTP
+                            periodSeconds: 10
+                            successThreshold: 1
+                            timeoutSeconds: 1
+                ---
+                apiVersion: apps/v1
+                kind: Deployment
+                metadata:
+                  name: default-http-backend
+                  labels:
+                    app: default-http-backend
+                  namespace: ingress-nginx
+                spec:
+                  replicas: 1
+                  selector:
+                    matchLabels:
+                      app: default-http-backend
+                  template:
+                    metadata:
+                      labels:
+                        app: default-http-backend
+                    spec:
+                      affinity:
+                        nodeAffinity:
+                          requiredDuringSchedulingIgnoredDuringExecution:
+                            nodeSelectorTerms:
+                              - matchExpressions:
+                                - key: beta.kubernetes.io/os
+                                  operator: NotIn
+                                  values:
+                                    - windows
+                                - key: node-role.kubernetes.io/worker
+                                  operator: Exists
+                      terminationGracePeriodSeconds: 60
+                      tolerations:
+                      - effect: NoExecute
+                        operator: Exists
+                      - effect: NoSchedule
+                        operator: Exists
+                      containers:
+                      - name: default-http-backend
+                        # Any image is permissable as long as:
+                        # 1. It serves a 404 page at /
+                        # 2. It serves 200 on a /healthz endpoint
+                        image: rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1
+                        livenessProbe:
+                          httpGet:
+                            path: /healthz
+                            port: 8080
+                            scheme: HTTP
+                          initialDelaySeconds: 30
+                          timeoutSeconds: 5
+                        ports:
+                        - containerPort: 8080
+                        resources:
+                          limits:
+                            cpu: 10m
+                            memory: 20Mi
+                          requests:
+                            cpu: 10m
+                            memory: 20Mi
+                ---
+                apiVersion: v1
+                kind: Service
+                metadata:
+                  name: default-http-backend
+                  namespace: ingress-nginx
+                  labels:
+                    app: default-http-backend
+                spec:
+                  ports:
+                  - port: 80
+                    targetPort: 8080
+                  selector:
+                    app: default-http-backend
+                EOF
+                
+            EOT
+          [32m+[0m [0m[1m[0mcontent_type[0m[0m = "text/x-shellscript"
+        }
+      [32m+[0m [0mpart {
+          [32m+[0m [0m[1m[0mcontent[0m[0m      = <<~EOT
+                #!/bin/bash
+                
+                kubectl create namespace cert-manager
+                kubectl label namespace cert-manager certmanager.k8s.io/disable-validation=true
+                sleep 5
+                kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v0.1.15/cert-manager-no-webhook.yaml
+                
+                until [ "$(kubectl get pods --namespace cert-manager |grep Running|wc -l)" = "2" ]; do
+                  sleep 2
+                done
+                
+                
+                cat <<EOF > /var/lib/rancher/k3s/server/manifests/rancher.yaml
+                ---
+                apiVersion: v1
+                kind: Namespace
+                metadata:
+                  name: cattle-system
+                ---
+                apiVersion: helm.cattle.io/v1
+                kind: HelmChart
+                metadata:
+                  name: rancher
+                  namespace: kube-system
+                spec:
+                  chart: https://releases.rancher.com/server-charts/latest/rancher-2.4.5.tgz
+                  targetNamespace: cattle-system
+                  valuesContent: |-
+                    hostname: rancherv2-test.dodax-test.com
+                    ingress:
+                      tls:
+                        source: letsEncrypt
+                    letsEncrypt:
+                      email: tech@dodax.com
+                EOF
+                
+                
+            EOT
+          [32m+[0m [0m[1m[0mcontent_type[0m[0m = "text/x-shellscript"
+        }
+      [32m+[0m [0mpart {
+          [32m+[0m [0m[1m[0mcontent[0m[0m      = <<~EOT
+                #!/bin/bash
+                
+                
+                  
+                
+            EOT
+          [32m+[0m [0m[1m[0mcontent_type[0m[0m = "text/x-shellscript"
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_autoscaling_group.k3s_agent[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_autoscaling_group" "k3s_agent" {
+      [32m+[0m [0m[1m[0marn[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mavailability_zones[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_cooldown[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mdesired_capacity[0m[0m          = 3
+      [32m+[0m [0m[1m[0mforce_delete[0m[0m              = false
+      [32m+[0m [0m[1m[0mhealth_check_grace_period[0m[0m = 300
+      [32m+[0m [0m[1m[0mhealth_check_type[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mload_balancers[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mmax_size[0m[0m                  = 3
+      [32m+[0m [0m[1m[0mmetrics_granularity[0m[0m       = "1Minute"
+      [32m+[0m [0m[1m[0mmin_size[0m[0m                  = 3
+      [32m+[0m [0m[1m[0mname[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m               = "rancherv2-test-agent"
+      [32m+[0m [0m[1m[0mprotect_from_scale_in[0m[0m     = false
+      [32m+[0m [0m[1m[0mservice_linked_role_arn[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mtarget_group_arns[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_zone_identifier[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mwait_for_capacity_timeout[0m[0m = "10m"
+
+      [32m+[0m [0mlaunch_template {
+          [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mversion[0m[0m = "$Latest"
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_autoscaling_group.k3s_server[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_autoscaling_group" "k3s_server" {
+      [32m+[0m [0m[1m[0marn[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mavailability_zones[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_cooldown[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mdesired_capacity[0m[0m          = 1
+      [32m+[0m [0m[1m[0mforce_delete[0m[0m              = false
+      [32m+[0m [0m[1m[0mhealth_check_grace_period[0m[0m = 300
+      [32m+[0m [0m[1m[0mhealth_check_type[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mload_balancers[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mmax_size[0m[0m                  = 1
+      [32m+[0m [0m[1m[0mmetrics_granularity[0m[0m       = "1Minute"
+      [32m+[0m [0m[1m[0mmin_size[0m[0m                  = 1
+      [32m+[0m [0m[1m[0mname[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m               = "rancherv2-test-server"
+      [32m+[0m [0m[1m[0mprotect_from_scale_in[0m[0m     = false
+      [32m+[0m [0m[1m[0mservice_linked_role_arn[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mtarget_group_arns[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_zone_identifier[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mwait_for_capacity_timeout[0m[0m = "10m"
+
+      [32m+[0m [0mlaunch_template {
+          [32m+[0m [0m[1m[0mid[0m[0m      = (known after apply)
+          [32m+[0m [0m[1m[0mname[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mversion[0m[0m = "$Latest"
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_db_subnet_group.private[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_db_subnet_group" "private" {
+      [32m+[0m [0m[1m[0marn[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m = "Managed by Terraform"
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m = "rancherv2-test-private"
+      [32m+[0m [0m[1m[0msubnet_ids[0m[0m  = (known after apply)
+    }
+
+[1m  # module.k3s_rancher.aws_launch_template.k3s_agent[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_launch_template" "k3s_agent" {
+      [32m+[0m [0m[1m[0marn[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_version[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mimage_id[0m[0m        = "ami-0b345448d6011eb59"
+      [32m+[0m [0m[1m[0minstance_type[0m[0m   = "m5n.large"
+      [32m+[0m [0m[1m[0mlatest_version[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m     = "rancherv2-test-agent"
+      [32m+[0m [0m[1m[0mtags[0m[0m            = {
+          [32m+[0m [0m"Name" = "rancherv2-test-agent"
+        }
+      [32m+[0m [0m[1m[0muser_data[0m[0m       = (known after apply)
+
+      [32m+[0m [0mblock_device_mappings {
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m = "/dev/sda1"
+
+          [32m+[0m [0mebs {
+              [32m+[0m [0m[1m[0mencrypted[0m[0m   = "true"
+              [32m+[0m [0m[1m[0miops[0m[0m        = (known after apply)
+              [32m+[0m [0m[1m[0mvolume_size[0m[0m = 50
+              [32m+[0m [0m[1m[0mvolume_type[0m[0m = "gp2"
+            }
+        }
+
+      [32m+[0m [0mmetadata_options {
+          [32m+[0m [0m[1m[0mhttp_endpoint[0m[0m               = (known after apply)
+          [32m+[0m [0m[1m[0mhttp_put_response_hop_limit[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mhttp_tokens[0m[0m                 = (known after apply)
+        }
+
+      [32m+[0m [0mnetwork_interfaces {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = true
+          [32m+[0m [0m[1m[0msecurity_groups[0m[0m       = (known after apply)
+        }
+
+      [32m+[0m [0mtag_specifications {
+          [32m+[0m [0m[1m[0mresource_type[0m[0m = "instance"
+          [32m+[0m [0m[1m[0mtags[0m[0m          = {
+              [32m+[0m [0m"Name" = "rancherv2-test-agent"
+            }
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_launch_template.k3s_server[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_launch_template" "k3s_server" {
+      [32m+[0m [0m[1m[0marn[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_version[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mimage_id[0m[0m        = "ami-0b345448d6011eb59"
+      [32m+[0m [0m[1m[0minstance_type[0m[0m   = "m5n.large"
+      [32m+[0m [0m[1m[0mlatest_version[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m     = "rancherv2-test-server"
+      [32m+[0m [0m[1m[0mtags[0m[0m            = {
+          [32m+[0m [0m"Name" = "rancherv2-test-server"
+        }
+      [32m+[0m [0m[1m[0muser_data[0m[0m       = (known after apply)
+
+      [32m+[0m [0mblock_device_mappings {
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m = "/dev/sda1"
+
+          [32m+[0m [0mebs {
+              [32m+[0m [0m[1m[0mencrypted[0m[0m   = "true"
+              [32m+[0m [0m[1m[0miops[0m[0m        = (known after apply)
+              [32m+[0m [0m[1m[0mvolume_size[0m[0m = 50
+              [32m+[0m [0m[1m[0mvolume_type[0m[0m = "gp2"
+            }
+        }
+
+      [32m+[0m [0mmetadata_options {
+          [32m+[0m [0m[1m[0mhttp_endpoint[0m[0m               = (known after apply)
+          [32m+[0m [0m[1m[0mhttp_put_response_hop_limit[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mhttp_tokens[0m[0m                 = (known after apply)
+        }
+
+      [32m+[0m [0mnetwork_interfaces {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = true
+          [32m+[0m [0m[1m[0msecurity_groups[0m[0m       = (known after apply)
+        }
+
+      [32m+[0m [0mtag_specifications {
+          [32m+[0m [0m[1m[0mresource_type[0m[0m = "instance"
+          [32m+[0m [0m[1m[0mtags[0m[0m          = {
+              [32m+[0m [0m"Name" = "rancherv2-test-server"
+            }
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_lb.lb[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_lb" "lb" {
+      [32m+[0m [0m[1m[0marn[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0marn_suffix[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mdns_name[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0menable_cross_zone_load_balancing[0m[0m = false
+      [32m+[0m [0m[1m[0menable_deletion_protection[0m[0m       = false
+      [32m+[0m [0m[1m[0mid[0m[0m                               = (known after apply)
+      [32m+[0m [0m[1m[0minternal[0m[0m                         = false
+      [32m+[0m [0m[1m[0mip_address_type[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mload_balancer_type[0m[0m               = "network"
+      [32m+[0m [0m[1m[0mname[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0msecurity_groups[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0msubnets[0m[0m                          = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                             = {
+          [32m+[0m [0m"kubernetes.io/cluster/rancherv2-test" = ""
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mzone_id[0m[0m                          = (known after apply)
+
+      [32m+[0m [0msubnet_mapping {
+          [32m+[0m [0m[1m[0mallocation_id[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0msubnet_id[0m[0m     = (known after apply)
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_lb.server-lb[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_lb" "server-lb" {
+      [32m+[0m [0m[1m[0marn[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0marn_suffix[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mdns_name[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0menable_cross_zone_load_balancing[0m[0m = false
+      [32m+[0m [0m[1m[0menable_deletion_protection[0m[0m       = false
+      [32m+[0m [0m[1m[0mid[0m[0m                               = (known after apply)
+      [32m+[0m [0m[1m[0minternal[0m[0m                         = true
+      [32m+[0m [0m[1m[0mip_address_type[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mload_balancer_type[0m[0m               = "network"
+      [32m+[0m [0m[1m[0mname[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0msecurity_groups[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0msubnets[0m[0m                          = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mzone_id[0m[0m                          = (known after apply)
+
+      [32m+[0m [0msubnet_mapping {
+          [32m+[0m [0m[1m[0mallocation_id[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0msubnet_id[0m[0m     = (known after apply)
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_lb_listener.port_443[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_lb_listener" "port_443" {
+      [32m+[0m [0m[1m[0marn[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mload_balancer_arn[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mport[0m[0m              = 443
+      [32m+[0m [0m[1m[0mprotocol[0m[0m          = "TCP"
+      [32m+[0m [0m[1m[0mssl_policy[0m[0m        = (known after apply)
+
+      [32m+[0m [0mdefault_action {
+          [32m+[0m [0m[1m[0morder[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mtarget_group_arn[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mtype[0m[0m             = "forward"
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_lb_listener.port_80[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_lb_listener" "port_80" {
+      [32m+[0m [0m[1m[0marn[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mload_balancer_arn[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mport[0m[0m              = 80
+      [32m+[0m [0m[1m[0mprotocol[0m[0m          = "TCP"
+      [32m+[0m [0m[1m[0mssl_policy[0m[0m        = (known after apply)
+
+      [32m+[0m [0mdefault_action {
+          [32m+[0m [0m[1m[0morder[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mtarget_group_arn[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mtype[0m[0m             = "forward"
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_lb_listener.server-port_6443[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_lb_listener" "server-port_6443" {
+      [32m+[0m [0m[1m[0marn[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mload_balancer_arn[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mport[0m[0m              = 6443
+      [32m+[0m [0m[1m[0mprotocol[0m[0m          = "TCP"
+      [32m+[0m [0m[1m[0mssl_policy[0m[0m        = (known after apply)
+
+      [32m+[0m [0mdefault_action {
+          [32m+[0m [0m[1m[0morder[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mtarget_group_arn[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mtype[0m[0m             = "forward"
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_lb_target_group.agent-443[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_lb_target_group" "agent-443" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                = (known after apply)
+      [32m+[0m [0m[1m[0marn_suffix[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mderegistration_delay[0m[0m               = 300
+      [32m+[0m [0m[1m[0mid[0m[0m                                 = (known after apply)
+      [32m+[0m [0m[1m[0mlambda_multi_value_headers_enabled[0m[0m = false
+      [32m+[0m [0m[1m[0mload_balancing_algorithm_type[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                               = (known after apply)
+      [32m+[0m [0m[1m[0mport[0m[0m                               = 443
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                           = "TCP"
+      [32m+[0m [0m[1m[0mproxy_protocol_v2[0m[0m                  = false
+      [32m+[0m [0m[1m[0mslow_start[0m[0m                         = 0
+      [32m+[0m [0m[1m[0mtags[0m[0m                               = {
+          [32m+[0m [0m"kubernetes.io/cluster/rancherv2-test" = ""
+        }
+      [32m+[0m [0m[1m[0mtarget_type[0m[0m                        = "instance"
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                             = (known after apply)
+
+      [32m+[0m [0mhealth_check {
+          [32m+[0m [0m[1m[0menabled[0m[0m             = true
+          [32m+[0m [0m[1m[0mhealthy_threshold[0m[0m   = 3
+          [32m+[0m [0m[1m[0minterval[0m[0m            = 10
+          [32m+[0m [0m[1m[0mmatcher[0m[0m             = "200-399"
+          [32m+[0m [0m[1m[0mpath[0m[0m                = "/healthz"
+          [32m+[0m [0m[1m[0mport[0m[0m                = "80"
+          [32m+[0m [0m[1m[0mprotocol[0m[0m            = "HTTP"
+          [32m+[0m [0m[1m[0mtimeout[0m[0m             = 6
+          [32m+[0m [0m[1m[0munhealthy_threshold[0m[0m = 3
+        }
+
+      [32m+[0m [0mstickiness {
+          [32m+[0m [0m[1m[0mcookie_duration[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0menabled[0m[0m         = (known after apply)
+          [32m+[0m [0m[1m[0mtype[0m[0m            = (known after apply)
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_lb_target_group.agent-80[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_lb_target_group" "agent-80" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                = (known after apply)
+      [32m+[0m [0m[1m[0marn_suffix[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mderegistration_delay[0m[0m               = 300
+      [32m+[0m [0m[1m[0mid[0m[0m                                 = (known after apply)
+      [32m+[0m [0m[1m[0mlambda_multi_value_headers_enabled[0m[0m = false
+      [32m+[0m [0m[1m[0mload_balancing_algorithm_type[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                               = (known after apply)
+      [32m+[0m [0m[1m[0mport[0m[0m                               = 80
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                           = "TCP"
+      [32m+[0m [0m[1m[0mproxy_protocol_v2[0m[0m                  = false
+      [32m+[0m [0m[1m[0mslow_start[0m[0m                         = 0
+      [32m+[0m [0m[1m[0mtags[0m[0m                               = {
+          [32m+[0m [0m"kubernetes.io/cluster/rancherv2-test" = ""
+        }
+      [32m+[0m [0m[1m[0mtarget_type[0m[0m                        = "instance"
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                             = (known after apply)
+
+      [32m+[0m [0mhealth_check {
+          [32m+[0m [0m[1m[0menabled[0m[0m             = true
+          [32m+[0m [0m[1m[0mhealthy_threshold[0m[0m   = 3
+          [32m+[0m [0m[1m[0minterval[0m[0m            = 10
+          [32m+[0m [0m[1m[0mmatcher[0m[0m             = "200-399"
+          [32m+[0m [0m[1m[0mpath[0m[0m                = "/healthz"
+          [32m+[0m [0m[1m[0mport[0m[0m                = "80"
+          [32m+[0m [0m[1m[0mprotocol[0m[0m            = "HTTP"
+          [32m+[0m [0m[1m[0mtimeout[0m[0m             = 6
+          [32m+[0m [0m[1m[0munhealthy_threshold[0m[0m = 3
+        }
+
+      [32m+[0m [0mstickiness {
+          [32m+[0m [0m[1m[0mcookie_duration[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0menabled[0m[0m         = (known after apply)
+          [32m+[0m [0m[1m[0mtype[0m[0m            = (known after apply)
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_lb_target_group.server-6443[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_lb_target_group" "server-6443" {
+      [32m+[0m [0m[1m[0marn[0m[0m                                = (known after apply)
+      [32m+[0m [0m[1m[0marn_suffix[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mderegistration_delay[0m[0m               = 300
+      [32m+[0m [0m[1m[0mid[0m[0m                                 = (known after apply)
+      [32m+[0m [0m[1m[0mlambda_multi_value_headers_enabled[0m[0m = false
+      [32m+[0m [0m[1m[0mload_balancing_algorithm_type[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                               = (known after apply)
+      [32m+[0m [0m[1m[0mport[0m[0m                               = 6443
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                           = "TCP"
+      [32m+[0m [0m[1m[0mproxy_protocol_v2[0m[0m                  = false
+      [32m+[0m [0m[1m[0mslow_start[0m[0m                         = 0
+      [32m+[0m [0m[1m[0mtarget_type[0m[0m                        = "instance"
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                             = (known after apply)
+
+      [32m+[0m [0mhealth_check {
+          [32m+[0m [0m[1m[0menabled[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mhealthy_threshold[0m[0m   = (known after apply)
+          [32m+[0m [0m[1m[0minterval[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mmatcher[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mpath[0m[0m                = (known after apply)
+          [32m+[0m [0m[1m[0mport[0m[0m                = (known after apply)
+          [32m+[0m [0m[1m[0mprotocol[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mtimeout[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0munhealthy_threshold[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mstickiness {
+          [32m+[0m [0m[1m[0mcookie_duration[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0menabled[0m[0m         = (known after apply)
+          [32m+[0m [0m[1m[0mtype[0m[0m            = (known after apply)
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_rds_cluster.k3s[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_rds_cluster" "k3s" {
+      [32m+[0m [0m[1m[0mapply_immediately[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0marn[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0mavailability_zones[0m[0m              = [
+          [32m+[0m [0m"eu-central-1a",
+          [32m+[0m [0m"eu-central-1b",
+          [32m+[0m [0m"eu-central-1c",
+        ]
+      [32m+[0m [0m[1m[0mbackup_retention_period[0m[0m         = 30
+      [32m+[0m [0m[1m[0mcluster_identifier[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mcluster_identifier_prefix[0m[0m       = "rancherv2-test-"
+      [32m+[0m [0m[1m[0mcluster_members[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mcluster_resource_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mcopy_tags_to_snapshot[0m[0m           = true
+      [32m+[0m [0m[1m[0mdatabase_name[0m[0m                   = "rancherv2-test"
+      [32m+[0m [0m[1m[0mdb_cluster_parameter_group_name[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mdb_subnet_group_name[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mdeletion_protection[0m[0m             = false
+      [32m+[0m [0m[1m[0menable_http_endpoint[0m[0m            = false
+      [32m+[0m [0m[1m[0mendpoint[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mengine[0m[0m                          = "aurora-postgresql"
+      [32m+[0m [0m[1m[0mengine_mode[0m[0m                     = "provisioned"
+      [32m+[0m [0m[1m[0mengine_version[0m[0m                  = "10.7"
+      [32m+[0m [0m[1m[0mhosted_zone_id[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mkms_key_id[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mmaster_password[0m[0m                 = (sensitive value)
+      [32m+[0m [0m[1m[0mmaster_username[0m[0m                 = "rancher"
+      [32m+[0m [0m[1m[0mport[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0mpreferred_backup_window[0m[0m         = "11:52-19:52"
+      [32m+[0m [0m[1m[0mpreferred_maintenance_window[0m[0m    = "sat:00:21-sat:00:51"
+      [32m+[0m [0m[1m[0mreader_endpoint[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mskip_final_snapshot[0m[0m             = true
+      [32m+[0m [0m[1m[0mstorage_encrypted[0m[0m               = true
+      [32m+[0m [0m[1m[0mvpc_security_group_ids[0m[0m          = (known after apply)
+    }
+
+[1m  # module.k3s_rancher.aws_rds_cluster_instance.k3s[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_rds_cluster_instance" "k3s" {
+      [32m+[0m [0m[1m[0mapply_immediately[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0marn[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0mauto_minor_version_upgrade[0m[0m      = true
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mca_cert_identifier[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mcluster_identifier[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mcopy_tags_to_snapshot[0m[0m           = false
+      [32m+[0m [0m[1m[0mdb_parameter_group_name[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mdb_subnet_group_name[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mdbi_resource_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mendpoint[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mengine[0m[0m                          = "aurora-postgresql"
+      [32m+[0m [0m[1m[0mengine_version[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0midentifier[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0midentifier_prefix[0m[0m               = "rancherv2-test-0"
+      [32m+[0m [0m[1m[0minstance_class[0m[0m                  = "db.r5.large"
+      [32m+[0m [0m[1m[0mkms_key_id[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mmonitoring_interval[0m[0m             = 0
+      [32m+[0m [0m[1m[0mmonitoring_role_arn[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mperformance_insights_enabled[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mperformance_insights_kms_key_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mport[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0mpreferred_backup_window[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpreferred_maintenance_window[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mpromotion_tier[0m[0m                  = 0
+      [32m+[0m [0m[1m[0mpublicly_accessible[0m[0m             = false
+      [32m+[0m [0m[1m[0mstorage_encrypted[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mwriter[0m[0m                          = (known after apply)
+    }
+
+[1m  # module.k3s_rancher.aws_rds_cluster_parameter_group.k3s[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_rds_cluster_parameter_group" "k3s" {
+      [32m+[0m [0m[1m[0marn[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m = "Force SSL for aurora-postgresql10.7"
+      [32m+[0m [0m[1m[0mfamily[0m[0m      = "aurora-postgresql10"
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m = "rancherv2-test-"
+
+      [32m+[0m [0mparameter {
+          [32m+[0m [0m[1m[0mapply_method[0m[0m = "pending-reboot"
+          [32m+[0m [0m[1m[0mname[0m[0m         = "rds.force_ssl"
+          [32m+[0m [0m[1m[0mvalue[0m[0m        = "1"
+        }
+    }
+
+[1m  # module.k3s_rancher.aws_route53_record.rancher[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "rancher" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "rancherv2-test.dodax-test.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 30
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "CNAME"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = "Z3QV05RMZOYISO"
+    }
+
+[1m  # module.k3s_rancher.aws_security_group.database[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group" "database" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "Managed by Terraform"
+      [32m+[0m [0m[1m[0megress[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mingress[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                   = "rancherv2-test-database"
+      [32m+[0m [0m[1m[0mowner_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                 = (known after apply)
+    }
+
+[1m  # module.k3s_rancher.aws_security_group.ingress[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group" "ingress" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "Managed by Terraform"
+      [32m+[0m [0m[1m[0megress[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mingress[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                   = "rancherv2-test-ingress"
+      [32m+[0m [0m[1m[0mowner_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                 = (known after apply)
+    }
+
+[1m  # module.k3s_rancher.aws_security_group.self[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group" "self" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "Managed by Terraform"
+      [32m+[0m [0m[1m[0megress[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mingress[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                   = "rancherv2-test-self"
+      [32m+[0m [0m[1m[0mowner_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                 = (known after apply)
+    }
+
+[1m  # module.k3s_rancher.aws_security_group_rule.database_egress_all[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "database_egress_all" {
+      [32m+[0m [0m[1m[0mcidr_blocks[0m[0m              = [
+          [32m+[0m [0m"0.0.0.0/0",
+        ]
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 0
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "-1"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 0
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "egress"
+    }
+
+[1m  # module.k3s_rancher.aws_security_group_rule.database_self[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "database_self" {
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 5432
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = true
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 5432
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "ingress"
+    }
+
+[1m  # module.k3s_rancher.aws_security_group_rule.ingress_egress_all[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "ingress_egress_all" {
+      [32m+[0m [0m[1m[0mcidr_blocks[0m[0m              = [
+          [32m+[0m [0m"0.0.0.0/0",
+        ]
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 0
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "-1"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 0
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "egress"
+    }
+
+[1m  # module.k3s_rancher.aws_security_group_rule.ingress_http[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "ingress_http" {
+      [32m+[0m [0m[1m[0mcidr_blocks[0m[0m              = [
+          [32m+[0m [0m"0.0.0.0/0",
+        ]
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 80
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 80
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "ingress"
+    }
+
+[1m  # module.k3s_rancher.aws_security_group_rule.ingress_https[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "ingress_https" {
+      [32m+[0m [0m[1m[0mcidr_blocks[0m[0m              = [
+          [32m+[0m [0m"0.0.0.0/0",
+        ]
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 443
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 443
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "ingress"
+    }
+
+[1m  # module.k3s_rancher.aws_security_group_rule.ingress_self[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "ingress_self" {
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 0
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "-1"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = true
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 0
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "ingress"
+    }
+
+[1m  # module.k3s_rancher.aws_security_group_rule.self_k3s_server[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "self_k3s_server" {
+      [32m+[0m [0m[1m[0mcidr_blocks[0m[0m              = [
+          [32m+[0m [0m"10.30.4.0/24",
+          [32m+[0m [0m"10.30.5.0/24",
+          [32m+[0m [0m"10.30.6.0/24",
+        ]
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 6443
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "tcp"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = false
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 6443
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "ingress"
+    }
+
+[1m  # module.k3s_rancher.aws_security_group_rule.self_self[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group_rule" "self_self" {
+      [32m+[0m [0m[1m[0mfrom_port[0m[0m                = 0
+      [32m+[0m [0m[1m[0mid[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mprotocol[0m[0m                 = "-1"
+      [32m+[0m [0m[1m[0msecurity_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mself[0m[0m                     = true
+      [32m+[0m [0m[1m[0msource_security_group_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mto_port[0m[0m                  = 0
+      [32m+[0m [0m[1m[0mtype[0m[0m                     = "ingress"
+    }
+
+[1m  # module.k3s_rancher.null_resource.wait_for_rancher[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "null_resource" "wait_for_rancher" {
+      [32m+[0m [0m[1m[0mid[0m[0m = (known after apply)
+    }
+
+[1m  # module.k3s_rancher.rancher2_bootstrap.admin[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "rancher2_bootstrap" "admin" {
+      [32m+[0m [0m[1m[0mcurrent_password[0m[0m = (sensitive value)
+      [32m+[0m [0m[1m[0mid[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mpassword[0m[0m         = (sensitive value)
+      [32m+[0m [0m[1m[0mtelemetry[0m[0m        = false
+      [32m+[0m [0m[1m[0mtemp_token[0m[0m       = (sensitive value)
+      [32m+[0m [0m[1m[0mtemp_token_id[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mtoken[0m[0m            = (sensitive value)
+      [32m+[0m [0m[1m[0mtoken_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mtoken_ttl[0m[0m        = 0
+      [32m+[0m [0m[1m[0mtoken_update[0m[0m     = false
+      [32m+[0m [0m[1m[0murl[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0muser[0m[0m             = (known after apply)
+    }
+
+[1m  # module.k3s_rancher.random_password.k3s_cluster_secret[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "random_password" "k3s_cluster_secret" {
+      [32m+[0m [0m[1m[0mid[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mlength[0m[0m      = 32
+      [32m+[0m [0m[1m[0mlower[0m[0m       = true
+      [32m+[0m [0m[1m[0mmin_lower[0m[0m   = 0
+      [32m+[0m [0m[1m[0mmin_numeric[0m[0m = 0
+      [32m+[0m [0m[1m[0mmin_special[0m[0m = 0
+      [32m+[0m [0m[1m[0mmin_upper[0m[0m   = 0
+      [32m+[0m [0m[1m[0mnumber[0m[0m      = true
+      [32m+[0m [0m[1m[0mresult[0m[0m      = (sensitive value)
+      [32m+[0m [0m[1m[0mspecial[0m[0m     = false
+      [32m+[0m [0m[1m[0mupper[0m[0m       = true
+    }
+
+[1m  # module.k3s_rancher.random_pet.lb[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "random_pet" "lb" {
+      [32m+[0m [0m[1m[0mid[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mlength[0m[0m    = 2
+      [32m+[0m [0m[1m[0mseparator[0m[0m = "-"
+    }
+
+[1m  # module.vpc.aws_eip.nat[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0mallocation_id[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0massociation_id[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mcustomer_owned_ip[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mdomain[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0minstance[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_dns[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ipv4_pool[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m              = {
+          [32m+[0m [0m"Name"      = "rancher-server-eu-central-1a"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc[0m[0m               = true
+    }
+
+[1m  # module.vpc.aws_eip.nat[1][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0mallocation_id[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0massociation_id[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mcustomer_owned_ip[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mdomain[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0minstance[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_dns[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ipv4_pool[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m              = {
+          [32m+[0m [0m"Name"      = "rancher-server-eu-central-1b"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc[0m[0m               = true
+    }
+
+[1m  # module.vpc.aws_eip.nat[2][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0mallocation_id[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0massociation_id[0m[0m    = (known after apply)
+      [32m+[0m [0m[1m[0mcustomer_owned_ip[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mdomain[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0minstance[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_dns[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ipv4_pool[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m              = {
+          [32m+[0m [0m"Name"      = "rancher-server-eu-central-1c"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc[0m[0m               = true
+    }
+
+[1m  # module.vpc.aws_internet_gateway.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_internet_gateway" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m     = {
+          [32m+[0m [0m"Name"      = "rancher-server"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m   = (known after apply)
+    }
+
+[1m  # module.vpc.aws_nat_gateway.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_nat_gateway" "this" {
+      [32m+[0m [0m[1m[0mallocation_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {
+          [32m+[0m [0m"Name"      = "rancher-server-eu-central-1a"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+    }
+
+[1m  # module.vpc.aws_nat_gateway.this[1][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_nat_gateway" "this" {
+      [32m+[0m [0m[1m[0mallocation_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {
+          [32m+[0m [0m"Name"      = "rancher-server-eu-central-1b"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+    }
+
+[1m  # module.vpc.aws_nat_gateway.this[2][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_nat_gateway" "this" {
+      [32m+[0m [0m[1m[0mallocation_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {
+          [32m+[0m [0m"Name"      = "rancher-server-eu-central-1c"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+    }
+
+[1m  # module.vpc.aws_route.private_nat_gateway[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route" "private_nat_gateway" {
+      [32m+[0m [0m[1m[0mdestination_cidr_block[0m[0m     = "0.0.0.0/0"
+      [32m+[0m [0m[1m[0mdestination_prefix_list_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0megress_only_gateway_id[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mgateway_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0minstance_id[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0minstance_owner_id[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mnat_gateway_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0morigin[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mstate[0m[0m                      = (known after apply)
+
+      [32m+[0m [0mtimeouts {
+          [32m+[0m [0m[1m[0mcreate[0m[0m = "5m"
+        }
+    }
+
+[1m  # module.vpc.aws_route.private_nat_gateway[1][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route" "private_nat_gateway" {
+      [32m+[0m [0m[1m[0mdestination_cidr_block[0m[0m     = "0.0.0.0/0"
+      [32m+[0m [0m[1m[0mdestination_prefix_list_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0megress_only_gateway_id[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mgateway_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0minstance_id[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0minstance_owner_id[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mnat_gateway_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0morigin[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mstate[0m[0m                      = (known after apply)
+
+      [32m+[0m [0mtimeouts {
+          [32m+[0m [0m[1m[0mcreate[0m[0m = "5m"
+        }
+    }
+
+[1m  # module.vpc.aws_route.private_nat_gateway[2][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route" "private_nat_gateway" {
+      [32m+[0m [0m[1m[0mdestination_cidr_block[0m[0m     = "0.0.0.0/0"
+      [32m+[0m [0m[1m[0mdestination_prefix_list_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0megress_only_gateway_id[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mgateway_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0minstance_id[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0minstance_owner_id[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mnat_gateway_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0morigin[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mstate[0m[0m                      = (known after apply)
+
+      [32m+[0m [0mtimeouts {
+          [32m+[0m [0m[1m[0mcreate[0m[0m = "5m"
+        }
+    }
+
+[1m  # module.vpc.aws_route.public_internet_gateway[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route" "public_internet_gateway" {
+      [32m+[0m [0m[1m[0mdestination_cidr_block[0m[0m     = "0.0.0.0/0"
+      [32m+[0m [0m[1m[0mdestination_prefix_list_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0megress_only_gateway_id[0m[0m     = (known after apply)
+      [32m+[0m [0m[1m[0mgateway_id[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0minstance_id[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0minstance_owner_id[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mnat_gateway_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m       = (known after apply)
+      [32m+[0m [0m[1m[0morigin[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mstate[0m[0m                      = (known after apply)
+
+      [32m+[0m [0mtimeouts {
+          [32m+[0m [0m[1m[0mcreate[0m[0m = "5m"
+        }
+    }
+
+[1m  # module.vpc.aws_route_table.private[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table" "private" {
+      [32m+[0m [0m[1m[0mid[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpropagating_vgws[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mroute[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m             = {
+          [32m+[0m [0m"Name"      = "rancher-server-private-eu-central-1a"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m           = (known after apply)
+    }
+
+[1m  # module.vpc.aws_route_table.private[1][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table" "private" {
+      [32m+[0m [0m[1m[0mid[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpropagating_vgws[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mroute[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m             = {
+          [32m+[0m [0m"Name"      = "rancher-server-private-eu-central-1b"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m           = (known after apply)
+    }
+
+[1m  # module.vpc.aws_route_table.private[2][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table" "private" {
+      [32m+[0m [0m[1m[0mid[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpropagating_vgws[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mroute[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m             = {
+          [32m+[0m [0m"Name"      = "rancher-server-private-eu-central-1c"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m           = (known after apply)
+    }
+
+[1m  # module.vpc.aws_route_table.public[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table" "public" {
+      [32m+[0m [0m[1m[0mid[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mpropagating_vgws[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mroute[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m             = {
+          [32m+[0m [0m"Name"      = "rancher-server-public"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m           = (known after apply)
+    }
+
+[1m  # module.vpc.aws_route_table_association.private[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private" {
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m      = (known after apply)
+    }
+
+[1m  # module.vpc.aws_route_table_association.private[1][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private" {
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m      = (known after apply)
+    }
+
+[1m  # module.vpc.aws_route_table_association.private[2][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private" {
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m      = (known after apply)
+    }
+
+[1m  # module.vpc.aws_route_table_association.public[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public" {
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m      = (known after apply)
+    }
+
+[1m  # module.vpc.aws_route_table_association.public[1][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public" {
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m      = (known after apply)
+    }
+
+[1m  # module.vpc.aws_route_table_association.public[2][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public" {
+      [32m+[0m [0m[1m[0mid[0m[0m             = (known after apply)
+      [32m+[0m [0m[1m[0mroute_table_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m      = (known after apply)
+    }
+
+[1m  # module.vpc.aws_subnet.private[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "private" {
+      [32m+[0m [0m[1m[0marn[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m               = "eu-central-1a"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                      = "10.30.4.0/24"
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m         = false
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                            = {
+          [32m+[0m [0m"Name"      = "rancher-server-private-eu-central-1a"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                          = (known after apply)
+    }
+
+[1m  # module.vpc.aws_subnet.private[1][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "private" {
+      [32m+[0m [0m[1m[0marn[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m               = "eu-central-1b"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                      = "10.30.5.0/24"
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m         = false
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                            = {
+          [32m+[0m [0m"Name"      = "rancher-server-private-eu-central-1b"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                          = (known after apply)
+    }
+
+[1m  # module.vpc.aws_subnet.private[2][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "private" {
+      [32m+[0m [0m[1m[0marn[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m               = "eu-central-1c"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                      = "10.30.6.0/24"
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m         = false
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                            = {
+          [32m+[0m [0m"Name"      = "rancher-server-private-eu-central-1c"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                          = (known after apply)
+    }
+
+[1m  # module.vpc.aws_subnet.public[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "public" {
+      [32m+[0m [0m[1m[0marn[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m               = "eu-central-1a"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                      = "10.30.1.0/24"
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m         = true
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                            = {
+          [32m+[0m [0m"Name"      = "rancher-server-public-eu-central-1a"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                          = (known after apply)
+    }
+
+[1m  # module.vpc.aws_subnet.public[1][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "public" {
+      [32m+[0m [0m[1m[0marn[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m               = "eu-central-1b"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                      = "10.30.2.0/24"
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m         = true
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                            = {
+          [32m+[0m [0m"Name"      = "rancher-server-public-eu-central-1b"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                          = (known after apply)
+    }
+
+[1m  # module.vpc.aws_subnet.public[2][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_subnet" "public" {
+      [32m+[0m [0m[1m[0marn[0m[0m                             = (known after apply)
+      [32m+[0m [0m[1m[0massign_ipv6_address_on_creation[0m[0m = false
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m               = "eu-central-1c"
+      [32m+[0m [0m[1m[0mavailability_zone_id[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                      = "10.30.3.0/24"
+      [32m+[0m [0m[1m[0mid[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block_association_id[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mmap_public_ip_on_launch[0m[0m         = true
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                            = {
+          [32m+[0m [0m"Name"      = "rancher-server-public-eu-central-1c"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                          = (known after apply)
+    }
+
+[1m  # module.vpc.aws_vpc.this[0][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_vpc" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0massign_generated_ipv6_cidr_block[0m[0m = false
+      [32m+[0m [0m[1m[0mcidr_block[0m[0m                       = "10.30.0.0/21"
+      [32m+[0m [0m[1m[0mdefault_network_acl_id[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_route_table_id[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mdefault_security_group_id[0m[0m        = (known after apply)
+      [32m+[0m [0m[1m[0mdhcp_options_id[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0menable_classiclink[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0menable_classiclink_dns_support[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0menable_dns_hostnames[0m[0m             = true
+      [32m+[0m [0m[1m[0menable_dns_support[0m[0m               = true
+      [32m+[0m [0m[1m[0mid[0m[0m                               = (known after apply)
+      [32m+[0m [0m[1m[0minstance_tenancy[0m[0m                 = "default"
+      [32m+[0m [0m[1m[0mipv6_association_id[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_cidr_block[0m[0m                  = (known after apply)
+      [32m+[0m [0m[1m[0mmain_route_table_id[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                             = {
+          [32m+[0m [0m"Name"      = "rancher-server"
+          [32m+[0m [0m"Terraform" = "true"
+        }
+    }
+
+[0m[1mPlan:[0m 66 to add, 0 to change, 0 to destroy.[0m
+
+------------------------------------------------------------------------
+
+Note: You didn't specify an "-out" parameter to save this plan, so Terraform
+can't guarantee that exactly these actions will be performed if
+"terraform apply" is subsequently run.
+

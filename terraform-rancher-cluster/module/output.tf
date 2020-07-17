@@ -11,3 +11,9 @@ output "rancher_token" {
   value     = local.install_rancher ? rancher2_bootstrap.admin.0.token : null
   sensitive = true
 }
+
+## Added
+output "k3s-secret" {
+  value     = local.k3s_cluster_secret
+  sensitive = true
+}

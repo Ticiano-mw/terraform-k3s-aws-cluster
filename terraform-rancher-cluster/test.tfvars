@@ -1,0 +1,3 @@
+variable "ENVIRONMENT" {
+  default = "Test"
+}
