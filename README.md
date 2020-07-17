@@ -64,6 +64,15 @@ This module supports creating a k3s cluster with a postgres backend in AWS. It a
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
+# Modifications
+
+This module was tweaked by t.herrera@dodax.com
+
+The structure was changed, to have the module on a subdir rather than the root, and use the root for the actual usage of the module (old 'examples')
+
+A few other modifications like default values for variables (e.g. AWS region) and rancher version.
+
+
 # License
 
 Copyright (c) 2014-2019 [Rancher Labs, Inc.](http://rancher.com)
